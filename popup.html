@@ -1,14 +1,79 @@
 <!DOCTYPE html>
-<html>
+<html lang="el">
 
 <head>
-    <!-- <link rel="stylesheet" href="style.css"> -->
+    <meta charset="UTF-8">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div>
-        <p>Hello world!</p>
+    <div id="orders-wrapper">
+        <div class="order">
+            <div>
+                <p class="waiting-time">
+                    Η παραγγελία σου θα φτάσει σε περίπου
+                    <span class="highlighted-text with-background">
+                        <span id="time-countdown">30</span>'
+                    </span>
+                </p>
+
+                <p class="estimated-arrival"> Εκτιμώμενη ώρα παράδοσης: <span id="estimated-arrival-time"
+                        class="highlighted-text">23:59</span> </p>
+            </div>
+
+            <a id="telephone" href="tel:+302104986781" title="Επικοινώνησε με το κατάστημα">
+                <img src="./images/telephone.svg" alt="Tel">
+            </a>
+        </div>
     </div>
+
+    <div id="no-orders">
+        Δεν βρέθηκαν παραγγελίες.
+
+        Κάνε <b>κλικ</b> σε ό,τι τραβάει η όρεξή σου!
+
+        <div class="order-now">
+            <a href="https://www.e-food.gr/shops?categories=souvlakia&vertical=food" target="_blank" title="Σουβλάκια">
+                <img src="./images/souvlakia.svg" alt="Σουβλάκια">
+            </a>
+
+            <a href="https://www.e-food.gr/shops?categories=kafes&vertical=food" target="_blank" title="Καφέδες">
+                <img src="./images/coffee.svg" alt="Καφέδες">
+            </a>
+
+            <a href="https://www.e-food.gr/shops?categories=pizza&vertical=food" target="_blank" title="Πίτσα">
+                <img src="./images/pizza.svg" alt="Pizza">
+            </a>
+
+            <a href="https://www.e-food.gr/shops?categories=burger&vertical=food" target="_blank" title="Μπέργκερ">
+                <img src="./images/burger.svg" alt="Burgers">
+            </a>
+            <a href="https://www.e-food.gr/shops?categories=makaronades&vertical=food" target="_blank"
+                title="Μακαρονάδες">
+                <img src="./images/pasta.svg" alt="Μακαρονάδες">
+            </a>
+
+            <a href="https://www.e-food.gr/shops?categories=crepes%2Cglyka%2Cvafles&vertical=food" target="_blank"
+                title="Γλυκά">
+                <img src="./images/donut.svg" alt="Γλυκά">
+            </a>
+        </div>
+
+        <div class="visit-efood">
+            <p> Ή </p>
+
+            <p> Μπες στο <a href="https://www.e-food.gr" target="_blank">e-food.gr</a> και διάλεξε μόνος/η σου αυτό που
+                θες! </p>
+        </div>
+
+    </div>
+
+    <!-- <a id="report-problem" href="mailto:melidon.stavros@gmail.com"> Αναφορά προβλήματος </a> -->
 
     <script src="./popup_script.js"></script>
 </body>

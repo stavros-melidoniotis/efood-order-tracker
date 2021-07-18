@@ -1,18 +1,136 @@
-/* button {
-    height: 30px;
-    width: 30px;
-    outline: none;
-    margin: 10px;
-    border: none;
-    border-radius: 2px;
+body {
+  width: 550px;
+  height: auto;
+  /* min-height: 300px; */
+  position: relative;
+  font-family: 'Open Sans', sans-serif;
+  background-color: #F7F7F7;
 }
 
-button.current {
-box-shadow: 0 0 0 2px white,
-            0 0 0 4px black;
-} */
+#no-orders {
+  display: none;
+  color: #333333;
+  padding: 1rem;
+  font-size: 1rem;
+}
 
-body {
-    width: 500px;
-    height: auto;
+.order-now {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.order-now a img {
+  width: 50px;
+  height: 50px;
+}
+
+.visit-efood {
+  text-align: center;
+}
+
+.visit-efood a {
+  color: #ED2D2E;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.visit-efood a:hover {
+  text-decoration: underline;
+}
+
+.orders-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.order {
+  background-color: #fff;
+  color: #333333;
+  border-radius: 9px;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1rem;
+  box-shadow: 0 2px 4px 0 rgb(0 0 0 / 13%);
+}
+
+.waiting-time {
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.estimated-arrival {
+  color: #9b9b9b;
+}
+
+.highlighted-text {
+  color: #00bc8c;
+  font-weight: bold;
+}
+
+.with-background {
+    background-color: #edf7ee;
+    padding: .3rem .5rem;
+    border-radius: 3px;
+}
+
+.order #telephone {
+  width: 35px;
+  height: 35px;
+  padding: 0.3rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #edf7ee;
+}
+
+.order #telephone img {
+  width: 20px;
+  height: 20px;
+  filter: invert(52%) sepia(68%) saturate(1154%) hue-rotate(124deg)
+    brightness(90%) contrast(101%);
+}
+
+.order #telephone img:hover {
+  animation-name: wave-animation;
+  animation-duration: 1.5s;
+  animation-delay: 0.2s;
+  animation-iteration-count: 1;
+  transform-origin: 70% 70%;
+}
+
+@keyframes wave-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(14deg);
+  }
+  20% {
+    transform: rotate(-8deg);
+  }
+  30% {
+    transform: rotate(14deg);
+  }
+  40% {
+    transform: rotate(-4deg);
+  }
+  60% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+#report-problem {
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }
