@@ -1,0 +1,52 @@
+#popup {
+    width: auto;
+    height: 70px;
+    padding: 1rem;
+    position: absolute;
+    top: 15px;
+    right: 10px;
+    background-color: #edf7ee;
+    color: #00bc8c;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+    font-size: 1rem;
+    animation: fade-in .5s ease-in-out, bounce .4s linear 1s 4 alternate, fade-out .8s linear 4s 1 normal forwards;
+}
+
+#popup p {
+    margin-bottom: 0 !important;
+}
+
+#popup span {
+    font-weight: 700;
+}
+
+@keyframes fade-in {
+    0% { 
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fade-out {
+    0% { 
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes bounce {
+    0% { 
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-10px);
+    }
+}

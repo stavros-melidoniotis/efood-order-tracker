@@ -14,16 +14,28 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
     let efoodUrlRegex = /^(https?:\/\/www\.e-food\.gr\/orders\/thankyou\?order_id=[\d]+&user_address=[\d]+)$/i;
 
     if (changeInfo.status === 'complete' && efoodUrlRegex.test(tab.url)) {
-        chrome.scripting.executeScript({
+        chrome.scripting.insertCSS({
             target: {
                 tabId: tabId
             },
             files: [
-                "./foreground.js"
+                "./foreground.css"
             ]
         })
         .then(() => {
-            console.log('Injected foreground.js script');
+            console.log('Injected foreground.css style');
+
+            chrome.scripting.executeScript({
+                target: {
+                    tabId: tabId
+                },
+                files: [
+                    "./foreground.js"
+                ]
+            })
+            .then(() => {
+                console.log('Injected foreground.js script');
+            })
         })
         .catch(err => console.log(err));
     }

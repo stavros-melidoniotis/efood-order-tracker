@@ -31,5 +31,11 @@ chrome.runtime.sendMessage({
 }, response => {
     if (response.message === 'success') {
         console.log('New order data saved!');
+
+        let popup = document.createElement('div');
+        popup.id = 'popup';
+        popup.innerHTML = '<p> <span>Επιτυχής </span> προσθήκη παραγγελίας! </p>';
+
+        document.body.append(popup);
     }
 });
