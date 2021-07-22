@@ -15,27 +15,48 @@
     <div id="orders-wrapper">
         <div class="order">
             <div>
-                <p class="waiting-time">
-                    Η παραγγελία σου θα φτάσει σε περίπου
+                <div class="store-info">
+                    <img id="store-logo" src="" alt="logo">
+                    <h1 id="store-name">Κύμινο σουβλατζίδικο & ψητοτεχνείο</h1>
+                </div>
+
+                <p class="waiting-time-text">
+                    Η παραγγελία σου θα φτάσει σε
                     <span class="highlighted-text with-background">
-                        <span id="time-countdown">30</span>'
+                        <span id="time-countdown"></span>
                     </span>
                 </p>
 
-                <p class="estimated-arrival"> Εκτιμώμενη ώρα παράδοσης: <span id="estimated-arrival-time"
-                        class="highlighted-text">23:59</span> </p>
+                <div class="order-notes">
+                    <p class="estimated-arrival"> Εκτιμώμενη ώρα παράδοσης: <span id="estimated-arrival-time"
+                            class="highlighted-text"></span> </p>
+
+                    <p> Τηλ: <span id="store-telephone" class="highlighted-text"></span> </p>
+                </div>
             </div>
 
-            <a id="telephone" href="tel:+302104986781" title="Επικοινώνησε με το κατάστημα">
-                <img src="./images/telephone.svg" alt="Tel">
-            </a>
+            <div class="action-buttons">
+                <button id="order-done" title="Η παραγγελία μου έφτασε!">
+                    <img src="./images/tick.svg" alt="Ολοκλήρωση">
+                </button>
+
+                <button id="more-actions" class="closed">
+                    <img src="./images/plus.svg" alt="Περισσότερα">
+                </button>
+
+                <button id="bug-report">
+                    <a href="mailto:melidon.stavros@gmail.com?subject=Αναφορά προβλήματος: E-food order tracker"
+                        title="Αναφορά προβλήματος">
+                        <img src="./images/bug-report.svg" alt="Bug">
+                    </a>
+                </button>
+            </div>
         </div>
     </div>
 
     <div id="no-orders">
-        Δεν βρέθηκαν παραγγελίες.
 
-        Κάνε <b>κλικ</b> σε ό,τι τραβάει η όρεξή σου!
+        Για να παραγγείλεις, κάνε <b>κλικ</b> σε ό,τι τραβάει η όρεξή σου!
 
         <div class="order-now">
             <a href="https://www.e-food.gr/shops?categories=souvlakia&vertical=food" target="_blank" title="Σουβλάκια">
@@ -53,6 +74,7 @@
             <a href="https://www.e-food.gr/shops?categories=burger&vertical=food" target="_blank" title="Μπέργκερ">
                 <img src="./images/burger.svg" alt="Burgers">
             </a>
+
             <a href="https://www.e-food.gr/shops?categories=makaronades&vertical=food" target="_blank"
                 title="Μακαρονάδες">
                 <img src="./images/pasta.svg" alt="Μακαρονάδες">
@@ -72,8 +94,6 @@
         </div>
 
     </div>
-
-    <!-- <a id="report-problem" href="mailto:melidon.stavros@gmail.com"> Αναφορά προβλήματος </a> -->
 
     <script src="./popup_script.js"></script>
 </body>

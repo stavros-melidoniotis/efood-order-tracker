@@ -1,37 +1,91 @@
-console.log('Popup console log.')
+const noOrders = document.getElementById('no-orders');
+const ordersWrapper = document.getElementById('orders-wrapper');
+const orderDoneBtn = document.getElementById('order-done');
+const moreActionsButton = document.getElementById('more-actions');
+const moreActionsButtonImg = document.querySelector('#more-actions img');
+const actionButtonsWrapper = document.querySelector('.action-buttons');
 
-
-// let skipOrderFetching = document.getElementById('skip-order-fetching');
-
-// console.log(skipOrderFetching)
-
-// if (!skipOrderFetching) {
-    // console.log('fetching');
-
+orderDoneBtn.addEventListener('click', () => {
     chrome.runtime.sendMessage({
-        message: 'get_order_data'   
+        message: 'delete_order_data'
     }, response => {
         if (response.message === 'success') {
-            let order = response.payload.order;
-
-            if (order) {
-                document.getElementById('no-orders').style.display = 'none';
-                document.getElementById('orders-wrapper').style.display = 'block';
-
-                document.getElementById('time-countdown').innerHTML = order.waiting_time;
-                document.getElementById('estimated-arrival-time').innerHTML = order.estimated_arrival;
-                document.getElementById('telephone').setAttribute('href', `tel:+30${order.store_telephone}`);
-
-                // let hiddenInput = document.createElement('input');
-                // hiddenInput.setAttribute('type', 'hidden');
-                // hiddenInput.setAttribute('id', 'skip-order-fetching');
-                // document.querySelector('#orders-wrapper').appendChild(hiddenInput);
-            } else {
-                document.getElementById('no-orders').style.display = 'block';
-                document.getElementById('orders-wrapper').style.display = 'none';
-            }
+            noOrders.style.display = 'block';
+            ordersWrapper.style.display = 'none';
         }
     });
-// } else {
-//     console.log('skipping');
-// }
+});
+
+moreActionsButton.addEventListener('click', (event) => {
+    if (event.target.classList.contains('closed')) {
+        actionButtonsWrapper.classList.add('all-visible');
+        moreActionsButtonImg.style.transform = 'rotate(45deg)';
+    } else {
+        actionButtonsWrapper.classList.remove('all-visible') ;
+        moreActionsButtonImg.style.transform = 'rotate(0deg)';
+    }
+
+    event.target.classList.toggle('closed');
+});
+
+chrome.runtime.sendMessage({
+    message: 'get_order_data'   
+}, response => {
+    if (response.message === 'success') {
+        const order = response.payload.order;
+
+        const timeCountdown = document.getElementById('time-countdown');
+        const estimatedArrivalTime = document.getElementById('estimated-arrival-time');
+        const storeLogo = document.getElementById('store-logo');
+        const storeName = document.getElementById('store-name');
+        const storeTelephone = document.getElementById('store-telephone');
+        const waitingTimeText = document.querySelector('.waiting-time-text');
+
+        if (order) {
+            noOrders.style.display = 'none';
+            ordersWrapper.style.display = 'block';
+
+            let estimatedArrival = order.estimated_arrival;
+            let humanFriendlyEstimatedArrival = new Date(estimatedArrival);
+            let [estimatedArrivalHours, estimatedArrivalMinutes] = formatHoursAndMinutes(humanFriendlyEstimatedArrival);
+
+            function beginCountdown() {
+                let now = new Date().getTime();
+                let timeDifference = estimatedArrival - now;
+
+                if (timeDifference < 0) {
+                    clearInterval();
+                    timeCountdown.innerHTML = 0;
+                    waitingTimeText.innerHTML = "Η παραγγελία σου φτάνει από στιγμή σε στιγμή!"
+                    return;
+                }
+
+                let minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+                let seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+                minutes = (minutes < 10) ? `0${minutes}` : minutes;
+                seconds = (seconds < 10) ? `0${seconds}` : seconds;
+
+                timeCountdown.innerHTML = `${minutes} λ. ${seconds} δευτ.`;
+            };
+
+            beginCountdown();
+            setInterval(beginCountdown, 1000);
+
+            estimatedArrivalTime.innerHTML = `${estimatedArrivalHours}:${estimatedArrivalMinutes}`;
+            storeLogo.setAttribute('src', order.store_logo_url);
+            storeName.innerHTML = order.store_name;
+            storeTelephone.innerHTML = order.store_telephone;
+        } else {
+            noOrders.style.display = 'block';
+            ordersWrapper.style.display = 'none';
+        }
+    }
+});
+
+function formatHoursAndMinutes(time) {
+    let hours = (time.getHours() < 10) ? `0${time.getHours()}` : time.getHours();
+    let minutes = (time.getMinutes() < 10) ? `0${time.getMinutes()}` : time.getMinutes();
+
+    return [hours, minutes];
+}

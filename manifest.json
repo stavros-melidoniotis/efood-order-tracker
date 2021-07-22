@@ -1,10 +1,11 @@
 {
     "name": "E-food Order Tracker",
-    "description": "Tracking your orders made easy!",
-    "version": "0.1.0",
+    "description": "Keep track of time for your e-food orders.",
+    "version": "1.0.0",
     "manifest_version": 3,
     "icons": {
-
+        "48": "./images/icons/icon-48.png",
+        "128": "./images/icons/icon-128.png"
     },
     "background": {
         "service_worker": "./background.js"
@@ -12,7 +13,8 @@
     "action": {
         "default_popup": "./popup.html",
         "default_icons": {
-
+            "48": "./images/icons/icon-48.png",
+            "128": "./images/icons/icon-128.png"
         }
     },
     "permissions": ["storage", "activeTab", "scripting"],

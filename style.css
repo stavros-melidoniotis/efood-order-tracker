@@ -1,10 +1,10 @@
 body {
   width: 550px;
   height: auto;
-  /* min-height: 300px; */
+  min-height: 160px;
   position: relative;
-  font-family: 'Open Sans', sans-serif;
-  background-color: #F7F7F7;
+  font-family: "Open Sans", sans-serif;
+  background-color: #f7f7f7;
 }
 
 #no-orders {
@@ -12,6 +12,7 @@ body {
   color: #333333;
   padding: 1rem;
   font-size: 1rem;
+  text-align: center;
 }
 
 .order-now {
@@ -32,7 +33,7 @@ body {
 }
 
 .visit-efood a {
-  color: #ED2D2E;
+  color: #ed2d2e;
   font-weight: bold;
   text-decoration: none;
 }
@@ -48,24 +49,45 @@ body {
 }
 
 .order {
+  height: auto;
   background-color: #fff;
   color: #333333;
   border-radius: 9px;
-  padding: 1rem;
+  padding: .5rem 1rem .5rem 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 1rem;
   font-size: 1rem;
   box-shadow: 0 2px 4px 0 rgb(0 0 0 / 13%);
 }
 
-.waiting-time {
+.store-info {
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+}
+
+#store-logo {
+  width: 80px;
+  height: 80px;
+}
+
+#store-name {
+  font-size: 1.5rem;
+}
+
+.waiting-time-text {
   font-weight: 700;
   font-size: 1.2rem;
 }
 
-.estimated-arrival {
+.order-notes {
   color: #9b9b9b;
+  display: flex;
+  gap: .5rem;
 }
 
 .highlighted-text {
@@ -74,63 +96,138 @@ body {
 }
 
 .with-background {
-    background-color: #edf7ee;
-    padding: .3rem .5rem;
-    border-radius: 3px;
+  background-color: #edf7ee;
+  padding: 0.3rem 0.5rem;
+  border-radius: 3px;
 }
 
-.order #telephone {
-  width: 35px;
-  height: 35px;
-  padding: 0.3rem;
+.action-buttons {
+  height: auto;
+  min-height: 124px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.action-buttons button {
+  border: none;
+}
+
+.action-buttons button:hover {
+  cursor: pointer;
+}
+
+#order-done,
+#bug-report {
+  width: 17px;
+  height: 17px;
+  background-color: #f7f7f7;
+  border-radius: 50%;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+}
+
+#order-done {
+  top: 40px;
+}
+
+#bug-report {
+  bottom: 40px;
+}
+
+#order-done img,
+#bug-report img {
+  width: 12px;
+  height: 12px;
+  filter: invert(52%) sepia(7%) saturate(0%) hue-rotate(160deg) brightness(95%)
+    contrast(82%);
+}
+
+#more-actions {
+  width: 45px;
+  height: 45px;
+  padding: 1rem;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #edf7ee;
+  z-index: 2;
 }
 
-.order #telephone img {
+#more-actions img {
   width: 20px;
   height: 20px;
+  pointer-events: none;
+  transition: all 0.2s ease-in-out;
   filter: invert(52%) sepia(68%) saturate(1154%) hue-rotate(124deg)
     brightness(90%) contrast(101%);
 }
 
-.order #telephone img:hover {
-  animation-name: wave-animation;
-  animation-duration: 1.5s;
-  animation-delay: 0.2s;
+.action-buttons.all-visible #order-done {
+  animation-name: back-top;
+  animation-duration: 0.3s;
   animation-iteration-count: 1;
-  transform-origin: 70% 70%;
+  top: 0;
 }
 
-@keyframes wave-animation {
+.action-buttons.all-visible #bug-report {
+  animation-name: back-bottom;
+  animation-duration: 0.3s;
+  animation-iteration-count: 1;
+  bottom: 0;
+}
+
+@keyframes back-top {
   0% {
-    transform: rotate(0deg);
+    top: 30px;
   }
   10% {
-    transform: rotate(14deg);
+    top: 25px;
   }
   20% {
-    transform: rotate(-8deg);
+    top: 23px;
   }
   30% {
-    transform: rotate(14deg);
+    top: 20px;
   }
   40% {
-    transform: rotate(-4deg);
+    top: 10px;
   }
   60% {
-    transform: rotate(0deg);
+    top: 5px;
   }
   100% {
-    transform: rotate(0deg);
+    top: 0;
   }
 }
 
-#report-problem {
-  position: absolute;
-  bottom: 0;
-  left: 0;
+@keyframes back-bottom {
+  0% {
+    bottom: 30px;
+  }
+  10% {
+    bottom: 25px;
+  }
+  20% {
+    bottom: 23px;
+  }
+  30% {
+    bottom: 20px;
+  }
+  40% {
+    bottom: 10px;
+  }
+  60% {
+    bottom: 5px;
+  }
+  100% {
+    bottom: 0;
+  }
 }
