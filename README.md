@@ -17,9 +17,9 @@ Furthermore, when there's no order to track, efood-order-tracker can be used as 
 ![catalog](https://github.com/stavros-melidoniotis/efood-order-tracker/blob/master/images/readme/catalog.png?raw=true)
 
 ## How to install
-Efood-order-tracker isn't yet listed in the Chrome Webstore, because it's in Pending Review status. This section will be updated in the future with the actual link from the Chrome Webstore.
+You can install efood-order-tracker directly from Chrome's Web Store by clicking [here](https://chrome.google.com/webstore/detail/e-food-order-tracker/eihmmfchgaebdbakpgmlgkldafickdmo).
 
-Until then, you can install the extension by following the instructions below:
+Otherwise, you can manually install the extension by following the instructions below:
 
 1. Clone this repo
 2. Open Chrome and navigate to `chrome://extensions`
