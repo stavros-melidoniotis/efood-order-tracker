@@ -77,7 +77,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     }
 
     if (request.message === 'delete_order_data') {
-        chrome.storage.local.remove("order", () => {
+        chrome.storage.sync.remove("order", () => {
             if (chrome.runtime.lastError) {
                 sendResponse({ message: 'fail' });
         
@@ -95,7 +95,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
 
 async function fetchOrderFromStorage() {
     let promise = new Promise((resolve, reject) => {
-        chrome.storage.local.get("order", data => {
+        chrome.storage.sync.get("order", data => {
             if (chrome.runtime.lastError) { reject('Failed'); };
 
             resolve(data);
@@ -106,7 +106,7 @@ async function fetchOrderFromStorage() {
 };
 
 function saveOrderToStorage(request, sendResponse) {
-    chrome.storage.local.set({
+    chrome.storage.sync.set({
         order: {
             order_id: request.payload.order_id,
             order_datetime: request.payload.order_datetime,
