@@ -28,4 +28,4 @@ Otherwise, you can manually install the extension by following the instructions 
 
 The extension is loaded into Chrome and ready to be used!
 
-Inspired by [Efood-Chrome-Extension-Timer](https://github.com/great-tse/Efood-Chrome-Extension-Timer) by @great-tse. Special thanks to @gioiliop7 for the enhancement ideas and aesthetic contribution!
+Inspired by [Efood-Chrome-Extension-Timer](https://github.com/great-tse/Efood-Chrome-Extension-Timer) by [@great-tse](https://github.com/great-tse). Special thanks to [@gioiliop7](https://github.com/gioiliop7) for the enhancement ideas and aesthetic contribution!
