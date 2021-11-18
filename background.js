@@ -9,35 +9,65 @@ chrome.runtime.onStartup.addListener(() => {
         });
 });
 
-// Inject the foreground.js script on efood thank-you order page
+// Inject JS scripts on efood thank-you and orders pages
 chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
-    let efoodUrlRegex = /^(https?:\/\/www\.e-food\.gr\/orders\/thankyou\?order_id=[\d]+&user_address=[\d]+)$/i;
+    let efoodThankYouPageRegex = /^(https?:\/\/www\.e-food\.gr\/orders\/thankyou\?order_id=[\d]+&user_address=[\d]+)$/i;
+    let efoodOrdersPageRegex = /^(https?:\/\/www\.e-food\.gr\/account\/orders)$/i;
 
-    if (changeInfo.status === 'complete' && efoodUrlRegex.test(tab.url)) {
-        chrome.scripting.insertCSS({
-            target: {
-                tabId: tabId
-            },
-            files: [
-                "./foreground.css"
-            ]
-        })
-        .then(() => {
-            console.log('Injected foreground.css style');
-
-            chrome.scripting.executeScript({
+    if (changeInfo.status === 'complete') {
+        if (efoodThankYouPageRegex.test(tab.url)) {
+            chrome.scripting.insertCSS({
                 target: {
                     tabId: tabId
                 },
                 files: [
-                    "./foreground.js"
+                    "./order-tracking/foreground.css"
                 ]
             })
             .then(() => {
-                console.log('Injected foreground.js script');
+                console.log('Injected order-tracking foreground.css style');
+
+                chrome.scripting.executeScript({
+                    target: {
+                        tabId: tabId
+                    },
+                    files: [
+                        "./order-tracking/foreground.js"
+                    ]
+                })
+                .then(() => {
+                    console.log('Injected order-tracking foreground.js script');
+                })
             })
-        })
-        .catch(err => console.log(err));
+            .catch(err => console.log(err));
+        }
+
+        if (efoodOrdersPageRegex.test(tab.url)) {
+            chrome.scripting.insertCSS({
+                target: {
+                    tabId: tabId
+                },
+                files: [
+                    "./order-analytics/foreground.css"
+                ]
+            })
+            .then(() => {
+                console.log('Injected order-analytics foreground.css style');
+
+                chrome.scripting.executeScript({
+                    target: {
+                        tabId: tabId
+                    },
+                    files: [
+                        "./order-analytics/foreground.js"
+                    ]
+                })
+                .then(() => {
+                    console.log('Injected order-analytics foreground.js script');
+                })
+            })
+            .catch(err => console.log(err));
+        }
     }
 });
 

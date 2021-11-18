@@ -1,0 +1,14 @@
+#analytics-button {
+    position: absolute;
+    top: .5rem;
+    right: .5rem;
+    padding: .5rem 1rem;
+    border-radius: .25rem;
+    display: block;
+    width: 150px;
+    font-weight: bold;
+}
+
+#analytics-button:hover {
+    cursor: pointer;
+}
