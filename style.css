@@ -26,6 +26,20 @@ body {
   text-align: center;
 }
 
+#view-analytics {
+  color: #333333;
+  font-size: .8rem;
+  text-align: center;
+}
+
+#view-analytics > p {
+  margin-bottom: 1rem;
+}
+
+#view-analytics > p > a {
+  color: #ed2d2e;
+}
+
 .order-now {
   margin-top: 1rem;
   display: flex;
