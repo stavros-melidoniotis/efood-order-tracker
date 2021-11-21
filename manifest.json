@@ -1,6 +1,6 @@
 {
-    "name": "E-food Order Tracker",
-    "description": "Keep track of time for your e-food orders.",
+    "name": "E-food Order Tracker & Analytics",
+    "description": "Keep track of time for your e-food orders and view interesting analytics.",
     "version": "1.2.0",
     "manifest_version": 3,
     "icons": {
