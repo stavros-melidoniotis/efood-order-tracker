@@ -39,6 +39,7 @@
     }
     100% {
         opacity: 0;
+        transform: translateY(-200px);
     }
 }
 
