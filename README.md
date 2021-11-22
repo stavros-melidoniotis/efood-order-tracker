@@ -1,7 +1,7 @@
 # efood-order-tracker
 Chrome extension that keeps track of time for your e-food orders.
 
-![logo](https://github.com/stavros-melidoniotis/efood-order-tracker/blob/master/images/readme/efood-order-tracker.png?raw=true)
+![logo](https://i.imgur.com/JkkrBXd.png)
 
 ## How it works
 Efood-order-tracker automatically retrieves your order's data from the e-food order page and helps you keep track of how much of the waiting time has passed. It also displays an estimated arrival time, which is calculated based on the waiting time and information about the store you ordered from, like the store's name, logo and telephone.
@@ -9,12 +9,17 @@ Efood-order-tracker automatically retrieves your order's data from the e-food or
 
 Order tracking             |  Order tracking finished
 :-------------------------:|:-------------------------:
-![order tracking](https://github.com/stavros-melidoniotis/efood-order-tracker/blob/master/images/readme/tracking-faded.png?raw=true)  |  ![order ready](https://github.com/stavros-melidoniotis/efood-order-tracker/blob/master/images/readme/tracking-ready-faded.png?raw=true)
+![order tracking](https://i.imgur.com/m14iVw1.png)  |  ![order ready](https://i.imgur.com/GIhTNEc.png)
 
 
 Furthermore, when there's no order to track, efood-order-tracker can be used as a catalog, with quick-links to various options from the e-food Cuisine types (e.g. burgers, pizza, coffee etc.).
 
-![catalog](https://github.com/stavros-melidoniotis/efood-order-tracker/blob/master/images/readme/catalog.png?raw=true)
+![catalog](https://i.imgur.com/vJPtSgC.png)
+
+You can also use this extension to view interesting analytics about your orders, like top restaurants, total expenses, how many piniatas you've used etc. Simply, navigate to [your orders](https://www.e-food.gr/account/orders) page and click on the Analytics button!
+
+![analytics](https://i.imgur.com/ly4U50g.png)
+
 
 ## How to install
 You can install efood-order-tracker directly from Chrome's Web Store by clicking [here](https://chrome.google.com/webstore/detail/e-food-order-tracker/eihmmfchgaebdbakpgmlgkldafickdmo).
