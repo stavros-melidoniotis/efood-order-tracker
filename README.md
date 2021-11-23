@@ -1,5 +1,5 @@
 # efood-order-tracker
-Chrome extension that keeps track of time for your e-food orders.
+An extension that keeps track of time for your e-food orders. Supported by Chromium based browsers like Google Chrome, Brave, Opera etc.
 
 ![logo](https://i.imgur.com/JkkrBXd.png)
 
@@ -27,10 +27,10 @@ You can install efood-order-tracker directly from Chrome's Web Store by clicking
 Otherwise, you can manually install the extension by following the instructions below:
 
 1. Clone this repo
-2. Open Chrome and navigate to `chrome://extensions`
+2. Open Chrome (or your preferred Chromium based browser) and navigate to the extensions page (`chrome://extensions` on Chrome)
 3. Enable developer mode (upper right corner) and click the "Load unpacked" button
 4. Find the cloned repo on your computer and select it, then press "Open"
 
-The extension is loaded into Chrome and ready to be used!
+The extension is loaded into your browser and ready to be used!
 
 Inspired by [Efood-Chrome-Extension-Timer](https://github.com/great-tse/Efood-Chrome-Extension-Timer) by [@great-tse](https://github.com/great-tse). Special thanks to [@gioiliop7](https://github.com/gioiliop7) for the enhancement ideas and aesthetic contribution!
