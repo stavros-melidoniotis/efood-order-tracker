@@ -4,9 +4,9 @@ const injectEfoodTracker = () => {
 
     waitingTime = waitingTimeParts[waitingTimeParts.length - 1]
 
-    const storeLogoUrl = document.querySelector("#thankyou-page > div > div > div > div > div > div > div > div > div > div:nth-child(1) > img").getAttribute('src')
-    const storeName = document.querySelector("#thankyou-page > div > div > div > div > div > div > div > div > div > div:nth-child(1) > div > div").textContent
-    const storeTelephone = document.querySelector("#thankyou-page > div > div > div > div > div > div > div > div > div > a > span").textContent
+    const storeLogoUrl = document.querySelector("#thankyou-page > div > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(1) > div > div:nth-child(3) > div:nth-child(1) > img").getAttribute('src')
+    const storeName = document.querySelector("#thankyou-page > div > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(1) > div > div:nth-child(3) > div:nth-child(1) > div > div").textContent
+    const storeTelephone = document.querySelector("#thankyou-page > div > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > a > span").textContent
     
     // Remove minutes symbol from time
     waitingTime = waitingTime.replace("'", "")
@@ -45,7 +45,7 @@ const injectEfoodTracker = () => {
 const ONE_SECOND = 1000
 
 const checkIfElementPresent = setInterval(() => {
-    if (document.querySelector("#thankyou-page > div > div > div > div > div > div > div > div > div > div:nth-child(2)")) {
+    if (document.querySelector("#thankyou-page > div > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(1) > div > div:nth-child(3)")) {
         clearInterval(checkIfElementPresent)
         injectEfoodTracker()
     }

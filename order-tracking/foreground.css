@@ -16,10 +16,6 @@
     animation: fade-in .5s ease-in-out, bounce .4s linear 1s 4 alternate, fade-out .8s linear 4s 1 normal forwards;
 }
 
-#popup p {
-    margin-bottom: 0 !important;
-}
-
 #popup span {
     font-weight: 700;
 }
