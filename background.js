@@ -145,7 +145,8 @@ function saveOrderToStorage(request, sendResponse) {
             store_logo_url: request.payload.store_logo_url,
             store_name: request.payload.store_name,
             order_total: request.payload.order_total,
-            store_telephone: request.payload.store_telephone
+            store_telephone: request.payload.store_telephone,
+            order_items: request.payload.order_items
         }
     }, () => {
         if (chrome.runtime.lastError) {

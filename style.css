@@ -7,6 +7,11 @@
   --background-color: #edf7ee;
 }
 
+::selection {
+  color: var(--white);
+  background: var(--efood-red);
+}
+
 .normal-text {
   color: var(--text-main);
 }
@@ -128,6 +133,78 @@ body {
 #store-logo {
   width: 80px;
   height: 80px;
+  box-shadow: 0px 0px 25px 6px rgba(64,64,64,0.12);
+}
+
+.order-info-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+}
+
+#remind-order {
+  background: none;
+  color: var(--efood-green);
+  border: none;
+  padding: .5rem;
+  border-radius: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: .2rem;
+}
+
+#remind-order:hover {
+  cursor: pointer;
+}
+
+#remind-order[data-toggle="off"] #word-to-change {
+  text-decoration: line-through;
+}
+
+#remind-order-arrow {
+  margin-right: .3rem;
+  filter: invert(56%) sepia(29%) saturate(6103%) hue-rotate(131deg) brightness(97%) contrast(101%);
+}
+
+#order-items > ul {
+  opacity: 0;
+  max-height: 0;
+  transition: max-height 0.4s ease-out;
+  overflow: hidden;
+  list-style: none;
+  padding: 0;
+  padding-bottom: .5rem;
+  border-bottom: 1px solid var(--text-main);
+  cursor: default;
+}
+
+#order-items.open > ul {
+  opacity: 1;
+  max-height: 400px;
+  transition: max-height 0.4s ease-in;
+  cursor: auto;
+}
+
+#order-items > ul > li {
+  margin-bottom: .4rem;
+}
+
+.item-quantity {
+  background-color: #F7F7F7;
+  font-weight: bold;
+  padding: .1rem .3rem;
+  margin-right: .3rem;
+}
+
+.item-price {
+  font-weight: bold;
+}
+
+.item-details {
+  width: 40ch;
+  font-size: 0.8rem;
 }
 
 .order-notes {

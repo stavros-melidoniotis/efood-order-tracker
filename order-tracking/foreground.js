@@ -8,7 +8,24 @@ const injectEfoodTracker = () => {
     const storeName = document.querySelector("#thankyou-page > div > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(1) > div > div:nth-child(3) > div:nth-child(1) > div > div").textContent
     const orderTotal = document.querySelector("#thankyou-page > div > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(1) > div > div:nth-child(3) > div:nth-child(3) > div > div").textContent
     const storeTelephone = document.querySelector("#thankyou-page > div > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > a > span").textContent
-    
+    const orderItems = document.querySelectorAll("#thankyou-page > div > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(1) > div > div:nth-child(4) > div:first-of-type > div")
+
+    const orderItemsArray = []
+
+    orderItems.forEach(orderItem => {
+        const quantity = orderItem.querySelector('div:first-of-type').textContent
+        const item = orderItem.querySelector('div:nth-child(2) > h3').textContent
+        const itemDetails = orderItem.querySelector('div:nth-child(2) > p')
+        const price = orderItem.querySelector('div:last-of-type').textContent
+
+        orderItemsArray.push({
+            quantity: quantity,
+            item: item,
+            itemDetails: (itemDetails) ? itemDetails.textContent : '',
+            price: price
+        })
+    })
+
     // Remove minutes symbol from time
     waitingTime = waitingTime.replace("'", "")
     
@@ -29,7 +46,8 @@ const injectEfoodTracker = () => {
             store_logo_url: storeLogoUrl,
             store_name: storeName,
             order_total: orderTotal,
-            store_telephone: storeTelephone
+            store_telephone: storeTelephone,
+            order_items: JSON.stringify(orderItemsArray)
         }
     }, response => {
         if (response.message === 'success') {

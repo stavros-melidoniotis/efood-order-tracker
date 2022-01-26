@@ -20,19 +20,28 @@
                     <h1 id="store-name" class="fs-1_5"></h1>
                 </div>
 
-                <p class="normal-text fw-700 fs-1_2">
+                <p class="waiting-time-text normal-text fw-700 fs-1_2">
                     Η παραγγελία σου θα φτάσει σε
                     <span class="highlighted-text with-background">
                         <span id="time-countdown"></span>
                     </span>
                 </p>
 
-                <p class="normal-text fw-700 fs-1">
-                    Σύνολο πληρωμής:
-                    <span class="highlighted-text">
-                        <span id="order-total"></span>
-                    </span>
-                </p>
+                <div class="order-info-wrapper normal-text fw-700 fs-1">
+                    <p>
+                        Σύνολο:
+                        <span class="highlighted-text">
+                            <span id="order-total"></span>
+                        </span>
+                    </p>
+
+                    <button id="remind-order" class="fw-700 fs-1" data-toggle="on"> 
+                        <span id="word-to-change"> Ξέχασες </span> τι πήρες;
+                        <img id="remind-order-arrow" width="15" height="15" src="./images/chevron-right-solid.svg" alt="arrow">
+                    </button>
+                </div>
+
+                <div id="order-items" class="normal-text"></div>
 
                 <div class="order-notes faded-text">
                     <p> Εκτιμώμενη ώρα παράδοσης: <span id="estimated-arrival-time" class="highlighted-text"></span> </p>
