@@ -144,6 +144,7 @@ function saveOrderToStorage(request, sendResponse) {
             estimated_arrival: request.payload.estimated_arrival,
             store_logo_url: request.payload.store_logo_url,
             store_name: request.payload.store_name,
+            order_total: request.payload.order_total,
             store_telephone: request.payload.store_telephone
         }
     }, () => {

@@ -6,6 +6,7 @@ const injectEfoodTracker = () => {
 
     const storeLogoUrl = document.querySelector("#thankyou-page > div > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(1) > div > div:nth-child(3) > div:nth-child(1) > img").getAttribute('src')
     const storeName = document.querySelector("#thankyou-page > div > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(1) > div > div:nth-child(3) > div:nth-child(1) > div > div").textContent
+    const orderTotal = document.querySelector("#thankyou-page > div > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(1) > div > div:nth-child(3) > div:nth-child(3) > div > div").textContent
     const storeTelephone = document.querySelector("#thankyou-page > div > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > a > span").textContent
     
     // Remove minutes symbol from time
@@ -27,6 +28,7 @@ const injectEfoodTracker = () => {
             estimated_arrival: estimatedArrivalTime,
             store_logo_url: storeLogoUrl,
             store_name: storeName,
+            order_total: orderTotal,
             store_telephone: storeTelephone
         }
     }, response => {

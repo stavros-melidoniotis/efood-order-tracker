@@ -38,6 +38,7 @@ chrome.runtime.sendMessage({
         const estimatedArrivalTime = document.getElementById('estimated-arrival-time');
         const storeLogo = document.getElementById('store-logo');
         const storeName = document.getElementById('store-name');
+        const orderTotal = document.getElementById('order-total');
         const storeTelephone = document.getElementById('store-telephone');
         const waitingTimeText = document.querySelector('.waiting-time-text');
 
@@ -75,6 +76,7 @@ chrome.runtime.sendMessage({
             estimatedArrivalTime.innerHTML = `${estimatedArrivalHours}:${estimatedArrivalMinutes}`;
             storeLogo.setAttribute('src', order.store_logo_url);
             storeName.innerHTML = order.store_name;
+            orderTotal.innerHTML = order.order_total;
             storeTelephone.innerHTML = order.store_telephone;
         } else {
             noOrders.style.display = 'block';

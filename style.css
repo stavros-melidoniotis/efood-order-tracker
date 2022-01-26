@@ -1,4 +1,53 @@
+:root {
+  --text-main: #333333;
+  --text-faded: #9b9b9b;
+  --efood-red: #ed2d2e;
+  --efood-green: #00bc8c;
+  --white: #fff;
+  --background-color: #edf7ee;
+}
+
+.normal-text {
+  color: var(--text-main);
+}
+
+.faded-text {
+  color: var(--text-faded);
+}
+
+.highlighted-text {
+  color: var(--efood-green);
+  font-weight: bold;
+}
+
+.with-background {
+  background-color: var(--background-color);
+  padding: 0.3rem 0.5rem;
+  border-radius: 3px;
+}
+
+.fw-700 {
+  font-weight: 700;
+}
+
+.fs-1 {
+  font-size: 1rem;
+}
+
+.fs-1_2 {
+  font-size: 1.2rem;
+}
+
+.fs-1_5 {
+  font-size: 1.5rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
 /* ---------- Popup CSS ---------- */
+
 
 body {
   width: 550px;
@@ -9,35 +58,21 @@ body {
   background-color: #f7f7f7;
 }
 
-#order-saved-popup {
-  width: 250px;
-  height: 90px;
-  position: absolute;
-  top: 1.5rem;
-  right: 1.5rem;
-  background-color: #edf7ee;
-}
-
 #no-orders {
   display: none;
-  color: #333333;
   padding: 1rem;
-  font-size: 1rem;
-  text-align: center;
 }
 
 #view-analytics {
-  color: #333333;
   font-size: .8rem;
-  text-align: center;
 }
 
-#view-analytics > p {
+#view-analytics {
   margin-bottom: 1rem;
 }
 
-#view-analytics > p > a {
-  color: #ed2d2e;
+#view-analytics > a {
+  color: var(--efood-red);
 }
 
 .order-now {
@@ -53,12 +88,8 @@ body {
   height: 50px;
 }
 
-.visit-efood {
-  text-align: center;
-}
-
 .visit-efood a {
-  color: #ed2d2e;
+  color: var(--efood-red);
   font-weight: bold;
   text-decoration: none;
 }
@@ -75,8 +106,7 @@ body {
 
 .order {
   height: auto;
-  background-color: #fff;
-  color: #333333;
+  background-color: var(--white);
   border-radius: 9px;
   padding: .5rem 1rem .5rem 1rem;
   display: flex;
@@ -100,30 +130,9 @@ body {
   height: 80px;
 }
 
-#store-name {
-  font-size: 1.5rem;
-}
-
-.waiting-time-text {
-  font-weight: 700;
-  font-size: 1.2rem;
-}
-
 .order-notes {
-  color: #9b9b9b;
   display: flex;
   gap: .5rem;
-}
-
-.highlighted-text {
-  color: #00bc8c;
-  font-weight: bold;
-}
-
-.with-background {
-  background-color: #edf7ee;
-  padding: 0.3rem 0.5rem;
-  border-radius: 3px;
 }
 
 .action-buttons {
@@ -182,7 +191,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #edf7ee;
+  background-color: var(--background-color);
   z-index: 2;
 }
 

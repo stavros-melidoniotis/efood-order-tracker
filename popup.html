@@ -13,24 +13,29 @@
 
 <body>
     <div id="orders-wrapper">
-        <div class="order">
+        <div class="order normal-text">
             <div>
                 <div class="store-info">
                     <img id="store-logo" src="" alt="logo">
-                    <h1 id="store-name"></h1>
+                    <h1 id="store-name" class="fs-1_5"></h1>
                 </div>
 
-                <p class="waiting-time-text">
+                <p class="normal-text fw-700 fs-1_2">
                     Η παραγγελία σου θα φτάσει σε
                     <span class="highlighted-text with-background">
                         <span id="time-countdown"></span>
                     </span>
                 </p>
 
-                <div class="order-notes">
-                    <p class="estimated-arrival"> Εκτιμώμενη ώρα παράδοσης: <span id="estimated-arrival-time"
-                            class="highlighted-text"></span> </p>
+                <p class="normal-text fw-700 fs-1">
+                    Σύνολο πληρωμής:
+                    <span class="highlighted-text">
+                        <span id="order-total"></span>
+                    </span>
+                </p>
 
+                <div class="order-notes faded-text">
+                    <p> Εκτιμώμενη ώρα παράδοσης: <span id="estimated-arrival-time" class="highlighted-text"></span> </p>
                     <p> Τηλ: <span id="store-telephone" class="highlighted-text"></span> </p>
                 </div>
             </div>
@@ -54,7 +59,7 @@
         </div>
     </div>
 
-    <div id="no-orders">
+    <div id="no-orders" class="normal-text fs-1 text-center">
 
         Για να παραγγείλεις, κάνε <b>κλικ</b> σε ό,τι τραβάει η όρεξή σου!
 
@@ -86,7 +91,7 @@
             </a>
         </div>
 
-        <div class="visit-efood">
+        <div class="visit-efood text-center">
             <p> Ή </p>
 
             <p> Μπες στο <a href="https://www.e-food.gr" target="_blank">e-food.gr</a> και διάλεξε μόνος/η σου αυτό που
@@ -95,8 +100,8 @@
 
     </div>
 
-    <div id="view-analytics">
-        <p> Δες analytics των παραγγελιών σου πατώντας <a href="https://www.e-food.gr/account/orders" target="_blank">εδώ</a> </p>
+    <div class="normal-text text-center">
+        <p id="view-analytics"> Δες analytics των παραγγελιών σου πατώντας <a href="https://www.e-food.gr/account/orders" target="_blank">εδώ</a> </p>
     </div>
 
     <script src="./popup_script.js"></script>

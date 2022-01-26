@@ -1,3 +1,12 @@
+:root {
+    --text-main: #333333;
+    --efood-red: #ed2d2e;
+    --efood-red-dark: #AF3531;
+    --white: #fff;
+    --sidebar-toggler-bg: #ffc200;
+    --sidebar-toggler-color: #212529; 
+}
+
 #analytics-button {
     position: absolute;
     top: .5rem;
@@ -10,7 +19,7 @@
     gap: 1rem;
     width: 150px;
     font-weight: bold;
-    background-color: #DC4643;
+    background-color: var(--efood-red);
     color: #fff;
     border: none;
     transition: all 0.2s ease;
@@ -18,7 +27,7 @@
 
 #analytics-button:hover {
     cursor: pointer;
-    background-color: #AF3531;
+    background-color: var(--efood-red-dark);
 }
 
 #loading-img {
@@ -46,7 +55,7 @@
     max-width: 400px;
     z-index: 9999;
     transition: all 1s ease;
-    background-color: #DE4640;
+    background-color: var(--efood-red);
     animation: slide-in 1s ease;
 }
 
@@ -68,9 +77,9 @@
     top: 50%;
     left: -80px;
     transform: rotate(-90deg);
-    color: #212529;
-    background-color: #ffc200;
-    border-color: #ffc200;
+    color: var(--sidebar-toggler-color);
+    background-color: var(--sidebar-toggler-bg);
+    border-color: var(--sidebar-toggler-bg);
     transition: left 0.4s ease;
 }
 
@@ -125,7 +134,7 @@
     font-weight: bold;
     font-size: 1.5rem;
     margin-bottom: unset;
-    color: #333333;
+    color: var(--text-main);
     text-shadow: .5px #333333a3;
 }
 
@@ -143,7 +152,7 @@ ul {
 }
 
 .top-restaurants-item > div > a {
-    color: #fff;
+    color: var(--white);
 }
 
 .top-restaurants-item > a > img {
