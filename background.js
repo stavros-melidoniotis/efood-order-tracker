@@ -11,7 +11,7 @@ chrome.runtime.onStartup.addListener(() => {
 
 // Inject JS scripts on efood thank-you and orders pages
 chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
-    const efoodThankYouPageRegex = /^(https?:\/\/www\.e-food\.gr\/orders\/thankyou\?order_id=[\d]+&user_address=[\d]+(&[\w\d_\-=\.]{0,255}){0,10})$/i;
+    const efoodThankYouPageRegex = /^(https?:\/\/www\.e-food\.gr\/orders\/thankyou\?order_id=[\d]+(&[\w\d_\-=\.]{0,255}){0,10})$/i;
     const efoodOrdersPageRegex = /^(https?:\/\/www\.e-food\.gr\/account\/orders(\?[\w\d_\-=\.]{0,255}){0,10})$/i;
 
     if (changeInfo.status === 'complete') {
