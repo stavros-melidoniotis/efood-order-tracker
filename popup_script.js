@@ -32,7 +32,7 @@ chrome.runtime.sendMessage({
     message: 'get_order_data'   
 }, response => {
     if (response.message === 'success') {
-        const order = response.payload.order;
+        const order = response.payload;
 
         const timeCountdown = document.getElementById('time-countdown');
         const estimatedArrivalTime = document.getElementById('estimated-arrival-time');

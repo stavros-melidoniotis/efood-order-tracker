@@ -4,11 +4,11 @@ const injectEfoodTracker = () => {
 
     waitingTime = waitingTimeParts[waitingTimeParts.length - 1]
 
-    const storeName = getElementByXpath("//h4[contains(text(),'Κατάστημα')]").nextSibling.textContent
-    const storeLogoUrl = getElementByXpath("//h4[contains(text(),'Κατάστημα')]").parentElement.previousSibling.getAttribute('src')
-    const orderTotal = getElementByXpath("//h4[contains(text(),'Σύνολο παραγγελίας')]").nextSibling.textContent
-    const storeTelephone = getElementByXpath("//div[contains(text(),'Επικοινωνία με το κατάστημα')]").nextSibling.nextSibling.lastChild.textContent
-    const orderItems = getElementByXpath("//h4[contains(text(),'Καλάθι')]").nextSibling.children
+    const storeName = getElementByXpath("//h4[contains(text(),'Κατάστημα')]")?.nextSibling.textContent
+    const storeLogoUrl = getElementByXpath("//h4[contains(text(),'Κατάστημα')]")?.parentElement.previousSibling.getAttribute('src')
+    const orderTotal = getElementByXpath("//h4[contains(text(),'Σύνολο παραγγελίας')]")?.nextSibling.textContent
+    const storeTelephone = getElementByXpath("//div[contains(text(),'Επικοινωνία με το κατάστημα')]")?.nextSibling.nextSibling.lastChild.textContent
+    const orderItems = getElementByXpath("//h4[contains(text(),'Καλάθι')]")?.nextSibling.children
 
     const orderItemsArray = []
 
