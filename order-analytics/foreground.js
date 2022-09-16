@@ -1,4 +1,4 @@
-let cookieValue = null
+cookieValue = null
 
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     if (request.message === 'cookie-value') {
