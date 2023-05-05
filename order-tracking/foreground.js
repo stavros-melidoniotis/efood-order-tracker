@@ -1,5 +1,5 @@
 const injectEfoodTracker = () => {
-    let waitingTime = getElementByXpath("//div[contains(text(),'Η παραγγελία σου θα παραδοθεί σε')]").textContent
+    let waitingTime = getElementByXpath("//p[contains(text(),'Η παραγγελία σου θα παραδοθεί σε')]").textContent
     const waitingTimeParts = waitingTime.split(' ')
 
     waitingTime = waitingTimeParts[waitingTimeParts.length - 1]
@@ -13,8 +13,11 @@ const injectEfoodTracker = () => {
     const orderItemsArray = []
 
     for (let orderItem of orderItems) {
-        const orderItemWrapper = orderItem.firstChild
-    
+        if (orderItem.nodeName === "HR") {
+            continue
+        }
+
+        const orderItemWrapper = orderItem.firstChild.firstChild
         const quantity = orderItemWrapper.children[0].textContent
         const item = orderItemWrapper.children[1]
         const itemName = item.children[0].textContent
@@ -72,7 +75,7 @@ const getElementByXpath = (path) => {
 }
 
 const checkIfElementPresent = setInterval(() => {
-    let arrivalTimeDiv = getElementByXpath("//div[contains(text(),'Η παραγγελία σου θα παραδοθεί σε')]")
+    let arrivalTimeDiv = getElementByXpath("//p[contains(text(),'Η παραγγελία σου θα παραδοθεί σε')]")
 
     if (arrivalTimeDiv) {
         clearInterval(checkIfElementPresent)
