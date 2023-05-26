@@ -89,6 +89,7 @@
 }
 
 #analytics-sidebar-toggler:hover {
+  cursor: pointer;
   left: -90px;
 }
 
