@@ -289,7 +289,7 @@ function fillWithStats(sidebarContent, stats) {
     const html = `
         <h1> Ενδιαφέροντα στοιχεία για τις παραγγελίες σου στο e-food </h1>
         <div class="top-restaurants">
-            <h2> Τα top 5 μαγαζιά 🍽️ </h2>
+            <h2> Τα top 5 καταστήματα 🍽️ </h2>
             <span class="mb-5"> Βάση συχνότητας παραγγελιών </span>
             <ul> ${topRestaurantsHTML} </ul>
         </div>
